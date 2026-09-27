@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daniel Slugoski — Keyboardist, Pianist &amp; Live Performer (CT)</title>
+<meta name="description" content="Connecticut-based keyboardist, pianist and composer. Live performances, original music, videos, upcoming shows and booking inquiries." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0c0f;
+    --bg-elev: #14161b;
+    --border: #2a2d33;
+    --text: #f2f0ea;
+    --muted: #9b9a94;
+    --gold: #c9a24b;
+    --gold-soft: rgba(201, 162, 75, 0.15);
+    --electric: #4fd1c5;
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+
+  :root[data-theme="light"] {
+    --bg: #f6f3ec;
+    --bg-elev: #ffffff;
+    --border: #e0dacb;
+    --text: #17181b;
+    --muted: #625f56;
+    --gold: #9a7326;
+    --gold-soft: rgba(154, 115, 38, 0.12);
+    --electric: #0e8f83;
+    --shadow: rgba(20, 18, 10, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', Georgia, serif;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+  .eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .gold-text { color: var(--gold); }
+  section { border-top: 1px solid var(--border); padding: 96px 0; }
+  section:first-of-type { border-top: none; }
+
+  /* Nav */
+  header.site-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-row { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.02em; }
+  nav.links { display: flex; gap: 28px; }
+  nav.links a { font-size: 0.85rem; color: var(--muted); }
+  nav.links a:hover { color: var(--text); }
+  .theme-toggle {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border); background: transparent; color: var(--text);
+    padding: 8px 14px; border-radius: 999px; cursor: pointer; font-size: 0.8rem;
+    font-family: inherit;
+  }
+  .theme-toggle:hover { border-color: var(--gold); color: var(--gold); }
+  .theme-toggle svg { width: 16px; height: 16px; }
+  .mobile-nav-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; }
+  @media (max-width: 800px) {
+    nav.links { display: none; }
+    .mobile-nav-toggle { display: block; }
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 26px; font-size: 0.85rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    border: 1px solid transparent; cursor: pointer; font-family: inherit;
+  }
+  .btn-gold { background: var(--gold); color: #100c02; }
+  .btn-gold:hover { filter: brightness(1.08); }
+  .btn-line { border-color: var(--border); color: var(--text); background: transparent; }
+  .btn-line:hover { border-color: var(--gold); color: var(--gold); }
+  .btn:disabled { opacity: 0.6; cursor: default; }
+
+  /* Hero */
+  .hero {
+    position: relative; min-height: 100svh; display: flex; align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero img.bg {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(to top, var(--bg) 5%, rgba(11,12,15,0.35) 55%, rgba(11,12,15,0.15));
+  }
+  :root[data-theme="light"] .hero::before {
+    background: linear-gradient(to top, var(--bg) 5%, rgba(246,243,236,0.4) 55%, rgba(246,243,236,0.15));
+  }
+  .hero-inner { padding: 140px 0 90px; }
+  .hero h1 { font-size: clamp(2.25rem, 7vw, 5.25rem); font-weight: 800; text-transform: uppercase; line-height: 0.92; }
+  .hero-tagline { margin-top: 30px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--text); opacity: 0.85; }
+  .hero-desc { margin-top: 16px; max-width: 480px; color: var(--muted); }
+  .hero-ctas { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* About */
+  .about-grid { display: grid; gap: 50px; grid-template-columns: 1.1fr 0.9fr; align-items: center; }
+  .about-grid p { color: var(--muted); margin: 16px 0 0; }
+  .stat-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .stat-grid dt { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); }
+  .stat-grid dd { margin: 8px 0 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.1rem; }
+
+  /* Cards */
+  .card {
+    background: var(--bg-elev); border: 1px solid var(--border);
+    display: flex; flex-direction: column; height: 100%;
+  }
+  .card img { aspect-ratio: 1/1; object-fit: cover; width: 100%; }
+  .card .card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+  .tag-pill {
+    position: absolute; top: 14px; left: 14px;
+    border: 1px solid var(--gold); background: color-mix(in srgb, var(--bg) 60%, transparent);
+    color: var(--gold); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.16em;
+    padding: 5px 10px; backdrop-filter: blur(4px);
+  }
+  .img-wrap { position: relative; overflow: hidden; }
+  .img-wrap img { transition: transform 0.6s ease; }
+  .card:hover .img-wrap img { transform: scale(1.05); }
+
+  .grid-3 { display: grid; gap: 22px; grid-template-columns: repeat(3, 1fr); }
+  .grid-2 { display: grid; gap: 22px; grid-template-columns: repeat(2, 1fr); }
+
+  /* Shows */
+  .show-row {
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center;
+    gap: 28px; padding: 26px 12px; border-top: 1px solid var(--border);
+    transition: background 0.2s ease;
+  }
+  .show-row:hover { background: color-mix(in srgb, var(--bg-elev) 60%, transparent); }
+  .show-row:last-child { border-bottom: 1px solid var(--border); }
+  .show-date { display: flex; align-items: center; gap: 10px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.05rem; width: 150px; }
+  .show-venue h3 { font-size: 1.2rem; font-weight: 700; }
+  .show-meta { margin-top: 6px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); }
+  .show-meta span { display: inline-flex; align-items: center; gap: 6px; }
+
+  /* Videos */
+  .video-card { position: relative; overflow: hidden; border: 1px solid var(--border); background: var(--bg-elev); }
+  .video-thumb { position: relative; aspect-ratio: 16/9; overflow: hidden; }
+  .video-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .video-card:hover .video-thumb img { transform: scale(1.05); }
+  .video-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
+  .play-circle {
+    width: 64px; height: 64px; border-radius: 999px; border: 1px solid var(--gold);
+    background: color-mix(in srgb, var(--bg) 55%, transparent); display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(3px);
+  }
+  .video-info { display: flex; justify-content: space-between; align-items: center; padding: 20px; gap: 16px; }
+  .video-info h3 { font-size: 1.05rem; font-weight: 700; margin-top: 6px; }
+  .video-cat { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); }
+
+  /* Projects (creative) */
+  .proj-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    border: 1px solid var(--border); gap: 1px; background: var(--border); overflow: hidden;
+  }
+  .proj-tile { background: var(--bg-elev); padding: 32px; transition: background 0.2s ease; }
+  .proj-tile:hover { background: color-mix(in srgb, var(--bg-elev) 70%, var(--gold-soft)); }
+  .proj-tile h3 { margin-top: 22px; font-size: 1.2rem; font-weight: 700; }
+  .proj-tile p { margin-top: 10px; color: var(--muted); font-size: 0.92rem; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; }
+  .email-link { margin-top: 26px; display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-weight: 500; }
+  .socials-row { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .social-btn {
+    width: 46px; height: 46px; display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border); color: var(--muted);
+  }
+  .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  form.contact-form { background: var(--bg-elev); border: 1px solid var(--border); padding: 32px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .field { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; }
+  .field label { font-size: 0.8rem; color: var(--muted); }
+  .field input, .field textarea {
+    background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    padding: 12px 14px; font-family: inherit; font-size: 0.95rem;
+  }
+  .field input:focus, .field textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .form-note { margin-top: 14px; font-size: 0.78rem; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--border); padding: 56px 0; }
+  .footer-row { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 28px; }
+  .footer-brand p:first-child { font-family: 'Fraunces', serif; font-weight: 800; font-size: 1.4rem; text-transform: uppercase; }
+  .footer-brand p:last-child { margin-top: 8px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); }
+
+  .toast {
+    position: fixed; bottom: 24px; right: 24px; z-index: 100;
+    background: var(--bg-elev); border: 1px solid var(--gold); color: var(--text);
+    padding: 14px 20px; max-width: 320px; box-shadow: 0 10px 30px var(--shadow);
+    transform: translateY(20px); opacity: 0; pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    font-size: 0.88rem;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast strong { display: block; margin-bottom: 4px; }
+
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 860px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .grid-2, .proj-grid, .form-row { grid-template-columns: 1fr; }
+    .show-row { grid-template-columns: 1fr; gap: 10px; }
+    .show-date { width: auto; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a href="#home" class="brand">Daniel Slugoski</a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#music">Music</a>
+      <a href="#live">Live</a>
+      <a href="#shows">Shows</a>
+      <a href="#videos">Videos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark and light mode">
+      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <span id="themeLabel">Dark</span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home" class="hero" style="border-top:none; padding:0;">
+    <img class="bg" src="assets/hero-performance.jpg" alt="Daniel Slugoski playing a grand piano outdoors at sunset" />
+    <div class="wrap hero-inner">
+      <p class="eyebrow reveal">Connecticut · Available for booking</p>
+      <h1 class="reveal">Daniel<br /><span class="gold-text">Slugoski</span></h1>
+      <p class="hero-tagline reveal">Keyboardist • Pianist • Live Performer • Composer</p>
+      <p class="hero-desc reveal">Connecticut-based musician performing live, creating original music, and collaborating with artists and bands.</p>
+      <div class="hero-ctas reveal">
+        <a href="#music" class="btn btn-gold">Listen to My Music</a>
+        <a href="#contact" class="btn btn-line">Book / Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <p class="eyebrow">About</p>
+        <h2 style="margin-top:10px; font-size:2rem;">Keys first. Everything else follows.</h2>
+        <p>Daniel Slugoski is a Connecticut-based musician, keyboardist and pianist who spends his time between the stage and the studio. He performs live with bands and solo, covering everything from full-band keys rigs to solo piano sets.</p>
+        <p>Alongside live work, he writes and records original music, produces music videos, and collaborates with other musicians on records, sessions and creative projects. The throughline is a classical piano foundation pushed into modern, contemporary sound.</p>
+        <dl class="stat-grid">
+          <div><dt>Based in</dt><dd>Connecticut</dd></div>
+          <div><dt>Plays</dt><dd>Keys · Piano · Synth</dd></div>
+          <div><dt>Open to</dt><dd>Shows · Sessions</dd></div>
+        </dl>
+      </div>
+      <div class="reveal img-wrap">
+        <img src="assets/live-keys.jpg" alt="Close-up of hands playing a synthesizer under blue stage light" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC -->
+  <section id="music">
+    <div class="wrap">
+      <p class="eyebrow reveal">Music</p>
+      <h2 class="reveal" style="margin-top:10px; font-size:2rem;">Original <span class="gold-text">projects</span></h2>
+      <p class="reveal" style="color:var(--muted); margin-top:10px;">Three ongoing bodies of work — piano, orchestral, and songwriting.</p>
+
+      <div class="grid-3" style="margin-top:44px;">
+        <article class="card reveal">
+          <div class="img-wrap">
+            <img src="assets/pianobox-cover.png" alt="Pianobox cover artwork" />
+            <span class="tag-pill">Piano / Classical</span>
+          </div>
+          <div class="card-body">
+            <h3 style="font-size:1.4rem; font-weight:700;">Pianobox</h3>
+            <p style="flex:1; color:var(--muted); font-size:0.92rem; margin-top:10px;">A solo piano project built on classical foundations — intimate, cinematic pieces recorded close to the instrument.</p>
+            <a href="https://youtube.com/" target="_blank" rel="noreferrer" class="btn btn-line" style="margin-top:20px; align-self:flex-start;">Listen ↗</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="img-wrap">
+            <img src="assets/xii-seasons-cover.jpg" alt="XII Seasons cover artwork" />
+            <span class="tag-pill">Orchestral</span>
+          </div>
+          <div class="card-body">
+            <h3 style="font-size:1.4rem; font-weight:700;">XII Seasons</h3>
+            <p style="flex:1; color:var(--muted); font-size:0.92rem; margin-top:10px;">An orchestral cycle of twelve movements, layering strings, synth textures and piano into a full-scale score.</p>
+            <a href="https://youtube.com/" target="_blank" rel="noreferrer" class="btn btn-line" style="margin-top:20px; align-self:flex-start;">Listen ↗</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="img-wrap">
+            <img src="assets/fantasia-for-america-cover.png" alt="Fantasia for America cover artwork" />
+            <span class="tag-pill">Original Composition</span>
+          </div>
+          <div class="card-body">
+            <h3 style="font-size:1.4rem; font-weight:700;">Fantasia for America</h3>
+            <p style="flex:1; color:var(--muted); font-size:0.92rem; margin-top:10px;">An original composition — written, arranged and produced independently, released as it was finished.</p>
+            <a href="https://youtube.com/" target="_blank" rel="noreferrer" class="btn btn-line" style="margin-top:20px; align-self:flex-start;">Watch ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE -->
+  <section id="live">
+    <div class="wrap">
+      <p class="eyebrow reveal">Live Performance</p>
+      <h2 class="reveal" style="margin-top:10px; font-size:2rem;">On stage, every week</h2>
+      <p class="reveal" style="color:var(--muted); margin-top:10px;">Live keyboard work with bands, artists and solo sets — clubs, theaters, private events and sessions.</p>
+
+      <div class="grid-2" style="margin-top:44px;">
+        <article class="card reveal">
+          <div class="img-wrap" style="aspect-ratio:16/10;">
+            <img src="assets/live-band.jpg" alt="Full Band Keys Rig" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
+          <div class="card-body">
+            <p class="eyebrow" style="color:var(--electric);">Club &amp; theater shows</p>
+            <h3 style="margin-top:10px; font-size:1.4rem; font-weight:700;">Full Band Keys Rig</h3>
+            <p style="margin-top:10px; color:var(--muted); font-size:0.92rem;">Keyboards, synth pads, organ and electric piano for full-band sets across Connecticut and the Northeast.</p>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="img-wrap" style="aspect-ratio:16/10;">
+            <img src="assets/live-keys.jpg" alt="Session & Sideman Work" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
+          <div class="card-body">
+            <p class="eyebrow" style="color:var(--electric);">Sit-in / hired keys</p>
+            <h3 style="margin-top:10px; font-size:1.4rem; font-weight:700;">Session &amp; Sideman Work</h3>
+            <p style="margin-top:10px; color:var(--muted); font-size:0.92rem;">Available as a hired keyboardist for touring artists, house bands, worship sets, weddings and studio sessions.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWS -->
+  <section id="shows">
+    <div class="wrap">
+      <p class="eyebrow reveal">Upcoming Shows</p>
+      <h2 class="reveal" style="margin-top:10px; font-size:2rem;">Where to <span class="gold-text">catch me</span></h2>
+
+      <div style="margin-top:36px;">
+        <div class="show-row reveal">
+          <div class="show-date">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold);"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Sep 20, 2026
+          </div>
+          <div class="show-venue">
+            <h3>Longshore Inn</h3>
+            <p class="show-meta">
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Westport, CT</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> TBD</span>
+            </p>
+          </div>
+          <a href="#contact" class="btn btn-line">More Info</a>
+        </div>
+
+        <div class="show-row reveal">
+          <div class="show-date">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold);"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Oct 2, 2026
+          </div>
+          <div class="show-venue">
+            <h3>La Scogliera</h3>
+            <p class="show-meta">
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Shelton, CT</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 6:00 PM</span>
+            </p>
+          </div>
+          <a href="#contact" class="btn btn-line">More Info</a>
+        </div>
+
+        <div class="show-row reveal">
+          <div class="show-date">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold);"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Oct 3, 2026
+          </div>
+          <div class="show-venue">
+            <h3>Private Birthday Party</h3>
+            <p class="show-meta">
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Seymour, CT</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> TBD</span>
+            </p>
+          </div>
+          <a href="#contact" class="btn btn-line">More Info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section id="videos">
+    <div class="wrap">
+      <p class="eyebrow reveal">Videos</p>
+      <h2 class="reveal" style="margin-top:10px; font-size:2rem;">Watch</h2>
+      <p class="reveal" style="color:var(--muted); margin-top:10px;">Live performances, piano covers, original music and short-form clips.</p>
+
+      <div class="grid-2" style="margin-top:44px;">
+        <a href="https://youtube.com/" target="_blank" rel="noreferrer" class="video-card reveal">
+          <div class="video-thumb">
+            <img src="assets/fantasia-for-america.png" alt="Fantasia for America" />
+            <div class="video-overlay"><div class="play-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M8 5v14l11-7z"/></svg></div></div>
+          </div>
+          <div class="video-info">
+            <div><p class="video-cat">Live Performances</p><h3>Fantasia for America</h3></div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=C7qrEP0a6t4" target="_blank" rel="noreferrer" class="video-card reveal">
+          <div class="video-thumb">
+            <img src="assets/video-piano.jpg" alt="Eastertime" />
+            <div class="video-overlay"><div class="play-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M8 5v14l11-7z"/></svg></div></div>
+          </div>
+          <div class="video-info">
+            <div><p class="video-cat">Piano Covers</p><h3>Eastertime</h3></div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=PXKGKj88GnQ" target="_blank" rel="noreferrer" class="video-card reveal">
+          <div class="video-thumb">
+            <img src="assets/video-studio.jpg" alt="Lights and Shadows" />
+            <div class="video-overlay"><div class="play-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M8 5v14l11-7z"/></svg></div></div>
+          </div>
+          <div class="video-info">
+            <div><p class="video-cat">Original Music</p><h3>Lights and Shadows</h3></div>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/p/Dc1WyJ1Oz_h/" target="_blank" rel="noreferrer" class="video-card reveal">
+          <div class="video-thumb">
+            <img src="assets/live-keys.jpg" alt="Mr. Crowley" />
+            <div class="video-overlay"><div class="play-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--gold)" stroke="none"><path d="M8 5v14l11-7z"/></svg></div></div>
+          </div>
+          <div class="video-info">
+            <div><p class="video-cat">Short-Form</p><h3>Mr. Crowley</h3></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects-section">
+    <div class="wrap">
+      <p class="eyebrow reveal">Creative Projects</p>
+      <h2 class="reveal" style="margin-top:10px; font-size:2rem;">Beyond the <span class="gold-text">stage</span></h2>
+
+      <div class="proj-grid" style="margin-top:44px;">
+        <div class="proj-tile reveal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          <h3>Songwriting &amp; Composition</h3>
+          <p>Writing original songs and instrumental compositions, from first sketch through final arrangement.</p>
+        </div>
+        <div class="proj-tile reveal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M22 8l-6 4 6 4V8z"/></svg>
+          <h3>Music Videos</h3>
+          <p>Filming and releasing performance videos and short-form visuals for original music and covers.</p>
+        </div>
+        <div class="proj-tile reveal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h3>Collaborations</h3>
+          <p>Working with vocalists, bands and producers — writing parts, tracking keys and shaping arrangements.</p>
+        </div>
+        <div class="proj-tile reveal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 3v4M12 17v4M5 12H1M23 12h-4M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8M18.4 18.4l-2.8-2.8M8.4 8.4 5.6 5.6"/></svg>
+          <h3>Recording &amp; Production</h3>
+          <p>Self-produced records blending acoustic piano, synths and orchestral layers into finished releases.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 style="margin-top:10px; font-size:1.9rem;">Interested in working together or booking a performance?</h2>
+        <p style="color:var(--muted); margin-top:12px;">For bookings, sessions, collaborations or general questions — send a message and Daniel will get back to you.</p>
+
+        <a href="mailto:hello@danielslugoski.com" class="email-link" id="emailLink">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+          hello@danielslugoski.com
+        </a>
+        <div style="margin-top:16px;">
+          <button type="button" class="btn btn-line" id="copyEmailBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy my email
+          </button>
+        </div>
+
+        <div style="margin-top:40px;">
+          <p class="eyebrow">Follow</p>
+          <div class="socials-row">
+            <a href="#" class="social-btn" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Spotify"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M7 10c4-1 8-.5 10 1M7 13c3-.7 6-.3 8 1M8 16c2.5-.5 4.5-.2 6 .8"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@email.com" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Tell me about the show, date, venue or project…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%; margin-top:24px; justify-content:center;" id="submitBtn">Send Message</button>
+        <p class="form-note">This form is a placeholder for the assignment — it does not currently send to an inbox.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="footer-brand">
+      <p>Daniel <span class="gold-text">Slugoski</span></p>
+      <p>Musician • Keyboardist • Pianist • Composer</p>
+    </div>
+    <div>
+      <div class="socials-row" style="justify-content:flex-end;">
+        <a href="#" aria-label="Instagram" style="color:var(--muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="YouTube" style="color:var(--muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></a>
+      </div>
+      <p style="margin-top:14px; font-size:0.75rem; color:var(--muted); text-align:right;">© <span id="year"></span> Daniel Slugoski. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"><strong id="toastTitle"></strong><span id="toastDesc"></span></div>
+
+<script>
+  // ---- Dark / light mode toggle ----
+  // This is the assignment's required interactive feature.
+  // It listens for a click, flips a data-theme attribute on <html>,
+  // and the CSS variables at the top of the file redraw every color on the page.
+  const root = document.documentElement;
+  const toggleBtn = document.getElementById('themeToggle');
+  const iconMoon = document.getElementById('iconMoon');
+  const iconSun = document.getElementById('iconSun');
+  const themeLabel = document.getElementById('themeLabel');
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      root.setAttribute('data-theme', 'light');
+      iconMoon.style.display = 'none';
+      iconSun.style.display = 'inline-block';
+      themeLabel.textContent = 'Light';
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      iconMoon.style.display = 'inline-block';
+      iconSun.style.display = 'none';
+      themeLabel.textContent = 'Dark';
+    }
+    localStorage.setItem('daniel-theme', theme);
+  }
+
+  // Restore saved preference, default to dark (matches the stage/performance branding)
+  const savedTheme = localStorage.getItem('daniel-theme') || 'dark';
+  applyTheme(savedTheme);
+
+  toggleBtn.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    applyTheme(current === 'light' ? 'dark' : 'light');
+  });
+
+  // ---- Toast helper ----
+  const toastEl = document.getElementById('toast');
+  const toastTitle = document.getElementById('toastTitle');
+  const toastDesc = document.getElementById('toastDesc');
+  let toastTimer = null;
+  function showToast(title, desc) {
+    toastTitle.textContent = title;
+    toastDesc.textContent = desc;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3200);
+  }
+
+  // ---- Copy email button ----
+  document.getElementById('copyEmailBtn').addEventListener('click', async () => {
+    const email = 'hello@danielslugoski.com';
+    try {
+      await navigator.clipboard.writeText(email);
+      showToast('Email copied', `${email} is on your clipboard.`);
+    } catch {
+      showToast('Copy failed', 'Your browser blocked the copy — the address is shown above.');
+    }
+  });
+
+  // ---- Contact form (placeholder submit) ----
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    setTimeout(() => {
+      form.reset();
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+      showToast('Message sent', 'Thanks for reaching out — Daniel will get back to you shortly.');
+    }, 600);
+  });
+
+  // ---- Scroll reveal ----
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach((el) => io.observe(el));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
